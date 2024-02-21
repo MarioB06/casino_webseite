@@ -32,6 +32,15 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
+                                <NavLink :href="route('slotMachine')" :active="route().current('slotMachine')">
+                                    Slot Machine
+                                </NavLink>
+                                <NavLink :href="route('rocketDice')" :active="route().current('rocketDice')">
+                                    Rocket Dice
+                                </NavLink>
+                                <NavLink :href="route('findTheCup')" :active="route().current('findTheCup')">
+                                    Find the Cup
+                                </NavLink>
                             </div>
                         </div>
 
