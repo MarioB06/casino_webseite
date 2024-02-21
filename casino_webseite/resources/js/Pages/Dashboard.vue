@@ -1,6 +1,8 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head } from '@inertiajs/vue3';
+
+
 </script>
 
 <template>
@@ -17,7 +19,7 @@ import { Head } from '@inertiajs/vue3';
                     <div class="p-6 text-gray-900 dark:text-gray-100">Welcome!</div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">Money: </div>
+                    <div class="p-6 text-gray-900 dark:text-gray-100">Money: {{ $attrs.account }} CHF </div>
                 </div>
                 <div class="flex">
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;" >

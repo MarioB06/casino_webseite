@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,11 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    $account = Auth::user()->account;
+
+    return Inertia::render('Dashboard', [
+        'account' => $account,
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/slotMachine', function () {
