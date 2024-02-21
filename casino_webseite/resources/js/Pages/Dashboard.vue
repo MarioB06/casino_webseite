@@ -24,7 +24,7 @@ import { Head, Link } from '@inertiajs/vue3';
                         <Link :href="route('slotMachine')">
                             <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
                                 <h2 style="font-weight: bold;">Slot Machine</h2>
-                                <p style="text-align: left; margin-top: 1rem;">Setze Einsatz, drehe Walzen. Gewinne bei passenden Symbolen.</p>
+                                <p style="text-align: left; margin-top: 1rem;">Wähle den Wert, mit dem du spielen möchtest. Setze deinen Einsatz in diesem Wert. Drücke auf den 'Drehen'-Button oder wiederhole den Einsatz, um zu spielen. Gewinne, wenn die Symbole auf einer aktivierten Gewinnlinie übereinstimmen!</p>
                             </div>
                         </Link>
                     </div>
@@ -32,7 +32,7 @@ import { Head, Link } from '@inertiajs/vue3';
                         <Link :href="route('rocketDice')">
                             <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
                                 <h2 style="font-weight: bold;">Rocket Dice</h2>
-                                <p style="text-align: left; margin-top: 1rem;">in this game you...</p>
+                                <p style="text-align: left; margin-top: 1rem;">Im Spiel werden zwei Würfel verwendet. Der Spieler platziert einen Einsatz, wählt "Über" oder "Unter" sowie die gewünschte Zahl und wirft die Würfel. Bei korrekter Vorhersage gewinnt der Spieler.</p>
                             </div>
                         </Link>
                     </div>
