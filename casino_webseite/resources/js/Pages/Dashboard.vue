@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -20,29 +20,29 @@ import { Head } from '@inertiajs/vue3';
                     </div>
                 </div>
                 <div class="flex">
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;;" >
-                        <a href="slotMachine">
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;;" >
+                        <Link :href="route('slotMachine')">
                             <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
                                 <h2 style="font-weight: bold;">Slot Machine</h2>
-                                <p style="text-align: left; margin-top: 1rem;">in this game you...</p>
+                                <p style="text-align: left; margin-top: 1rem;">Setze Einsatz, drehe Walzen. Gewinne bei passenden Symbolen.</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;">
-                        <a href="rocketDice">
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;">
+                        <Link :href="route('rocketDice')">
                             <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
                                 <h2 style="font-weight: bold;">Rocket Dice</h2>
                                 <p style="text-align: left; margin-top: 1rem;">in this game you...</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33%">
-                        <a href="findTheCup">
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33%">
+                        <Link :href="route('findTheCup')">
                             <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
                                 <h2 style="font-weight: bold;">Find the Cup</h2>
                                 <p style="text-align: left; margin-top: 1rem;">in this game you...</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
