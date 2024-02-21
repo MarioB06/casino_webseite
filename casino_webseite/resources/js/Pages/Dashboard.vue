@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -13,8 +13,37 @@ import { Head } from '@inertiajs/vue3';
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">You're logged in!</div>
+                <h1 style="font-weight: bold; font-size: 2rem; padding: 1rem; text-align: center;">Herzlich willkommen im virtuellen Casino! <br> Tauchen Sie ein in die Welt des Glücks, ohne echtes Geld zu riskieren.</h1>
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        <h2 style="font-weight: bold;">Money: </h2>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;;" >
+                        <Link :href="route('slotMachine')">
+                            <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                                <h2 style="font-weight: bold;">Slot Machine</h2>
+                                <p style="text-align: left; margin-top: 1rem;">Wähle den Wert, mit dem du spielen möchtest. Setze deinen Einsatz in diesem Wert. Drücke auf den 'Drehen'-Button oder wiederhole den Einsatz, um zu spielen. Gewinne, wenn die Symbole auf einer aktivierten Gewinnlinie übereinstimmen!</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;">
+                        <Link :href="route('rocketDice')">
+                            <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                                <h2 style="font-weight: bold;">Rocket Dice</h2>
+                                <p style="text-align: left; margin-top: 1rem;">Im Spiel werden zwei Würfel verwendet. Der Spieler platziert einen Einsatz, wählt "Über" oder "Unter" sowie die gewünschte Zahl und wirft die Würfel. Bei korrekter Vorhersage gewinnt der Spieler.</p>
+                            </div>
+                        </Link>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33%">
+                        <Link :href="route('findTheCup')">
+                            <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                                <h2 style="font-weight: bold;">Find the Cup</h2>
+                                <p style="text-align: left; margin-top: 1rem;">in this game you...</p>
+                            </div>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
