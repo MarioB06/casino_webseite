@@ -16,18 +16,24 @@ import { Head } from '@inertiajs/vue3';
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900 dark:text-gray-100">Welcome!</div>
                 </div>
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 20px;">
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
                     <div class="p-6 text-gray-900 dark:text-gray-100">Money: </div>
                 </div>
-                <div class="flex" style="margin-left: 3%;">
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 20px; margin-right: 3%; inline-size: 33.33%;" >
-                        <div class="p-6 text-gray-900 dark:text-gray-100">Slot Machine </div>
+                <div class="flex">
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;" >
+                        <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                            Slot Machine
+                        </div>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 20px; margin-right: 3%; inline-size: 33.33%;">
-                        <div class="p-6 text-gray-900 dark:text-gray-100">Rocket Dice </div>
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;">
+                        <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                            Rocket Dice
+                        </div>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 20px; margin-right: 3%; inline-size: 33.33%;">
-                        <div class="p-6 text-gray-900 dark:text-gray-100">Find the Cup </div>
+                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 3rem; inline-size: 33.33%">
+                        <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                            Find the Cup
+                        </div>
                     </div>
                 </div>
             </div>
