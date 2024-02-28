@@ -39,7 +39,7 @@ class RocketDice extends Controller
 
                     $profit = $betAmount * $multiplier;
 
-                    return redirect()->back()->with(compact('dice_1', 'dice_2', 'profit'));
+                    return redirect()->route('animation')->with(compact('dice_1', 'dice_2', 'profit'));
 
 
                 } else {
@@ -63,7 +63,7 @@ class RocketDice extends Controller
 
                     $profit = $betAmount * $multiplier;
 
-                    return redirect()->back()->with(compact('dice_1', 'dice_2', 'profit'));
+                    return redirect()->route('animation')->with(compact('dice_1', 'dice_2', 'profit'));
 
                 } else {
                     return redirect()->back()->with('error', 'Verloren.');
