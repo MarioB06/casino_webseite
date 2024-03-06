@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 
 
 </script>
@@ -23,23 +23,28 @@ import { Head } from '@inertiajs/vue3';
                 </div>
                 <div class="flex">
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;" >
-                        <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
-                            <p style="font-weight: bold; font-size: large;">Slot Machine</p>
-                            <p style="text-align: left;">Setze Einsatz, drehe Walzen. Gewinne bei passenden Symbolen.</p>
-                        </div>
+                        <Link :href="route('slotMachine')">
+                            <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                                <p style="font-weight: bold; font-size: large;">Slot Machine</p>
+                                <p style="text-align: left;">Setze einen Einsatz und drehe die Walzen. Gewinne bei passenden Symbolen.</p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33% ; margin-right: 1rem;">
-                        <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
-                            <p style="font-weight: bold; font-size: large;">Rocket Dice</p>
-                            <p style="text-align: left;">Im Spiel werden zwei Würfel verwendet. Der Spieler platziert einen Einsatz, wählt "Über" oder "Unter" sowie die gewünschte Zahl und wirft die Würfel. Bei korrekter Vorhersage gewinnt der Spieler.</p>
-                        </div>
+                        <Link :href="route('rocketDice')">
+                            <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                                <p style="font-weight: bold; font-size: large;">Rocket Dice</p>
+                                <p style="text-align: left;">Wähle einen Einsatz, bestimme ob die gewürfelte Zahl kleiner oder grösser ist und wirf die Würfel. </p>
+                            </div>
+                        </Link>
                     </div>
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="margin-top: 3rem; inline-size: 33.33%">
-                        <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
-                            <p style="font-weight: bold; font-size: large;">Find the Cup</p>
-                            <p style="text-align: left;">Wähle den Wert, mit dem du spielen möchtest. Drücke auf den 'Drehen'-Button oder wiederhole den Einsatz, um zu spielen.
-                                Gewinne, wenn die Symbole auf einer aktivierten Gewinnlinie übereinstimmen!</p>
-                        </div>
+                        <Link :href="route('findTheCup')">
+                            <div class="p-6 text-gray-900 dark:text-gray-100" style="text-align: center;">
+                                <p style="font-weight: bold; font-size: large;">Find the Cup</p>
+                                <p style="text-align: left;">Bestimme den Einsatz, behalte den richtigen Becher im Auge und decke ihn auf. </p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>

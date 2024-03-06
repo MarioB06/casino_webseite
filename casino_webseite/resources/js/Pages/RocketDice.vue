@@ -14,8 +14,15 @@ import { Head, Link } from '@inertiajs/vue3';
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div style="font-size: 2rem; font-weight: bold; text-align: center;">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">Herzlich willkommen im virtuellen Casino! <br> Tauchen Sie ein in die Welt des Glücks, ohne echtes Geld zu riskieren.</div>
+                <div style="font-weight: bold; text-align: center;">
+                    <div class="p-6 text-gray-900 dark:text-gray-100" style="">
+                        <p style="font-size: 2rem;">Rocket Dice</p>
+                        <br>
+                        <p style="font-size: 1rem;">1. Wählen Sie einen Einsatz. <br>
+                            2. Wählen Sie eine Zahl und bestimme, ob die gewürfelte Zahl kleiner oder grösser sein wird. <br>
+                            3. Drücken Sie auf "Spielen"
+                        </p>
+                    </div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
                     <form :action="route('rocketdice.play')" method="post">
@@ -25,7 +32,8 @@ import { Head, Link } from '@inertiajs/vue3';
                                 <label for="bet_amount">Einsatz: </label>
                                 <input type="text" class="form-control" id="einsatz" placeholder="mind. 1 CHF">
                             </div>
-                                <div class="p-6 text-gray-900 dark:text-gray-100" style="display: inline-block;">
+                            <div class="p-6 text-gray-900 dark:text-gray-100">
+                                <div>
                                     <label for="number" style="margin: 1rem;">Zahl:</label>
                                     <select id="number" name="number" required>
                                         <option value="2">2</option>
@@ -40,17 +48,27 @@ import { Head, Link } from '@inertiajs/vue3';
                                         <option value="11">11</option>
                                     </select>
                                 </div>
-                                <div class="p-6 text-gray-900 dark:text-gray-100"  style="display: inline-block;">
+                                <div>
                                     <input type="radio" id="number_lower" name="option" value="number_lower" required>
                                     <label for="number_lower" style="margin: 0.5rem;">kleiner</label>              
                                                     
                                     <input type="radio" id="number_higher" name="option" value="number_higher" required>
                                     <label for="number_higher" style="margin: 0.5rem;">größer</label>
                                 </div>
+                            </div>
+                            <div style="margin: 1.5rem;">
+                                <button class="p-6 text-gray-900 dark:text-gray-100 motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="background-color: aquamarine; border-radius: 0.5rem;"><input type="submit" value="Spielen"></button>
+                            </div>    
                         </div>
-                        <button class="p-6 text-gray-900 dark:text-gray-100"><input type="submit" value="Spielen"></button>
+                        
+                        
                     </form>
-                </div>              
+                </div> 
+                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        -Game-
+                    </div>
+                </div>             
             </div>
         </div>
     </AuthenticatedLayout>
