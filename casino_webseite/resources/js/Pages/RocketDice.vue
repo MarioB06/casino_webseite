@@ -18,8 +18,8 @@ import { Head, Link } from '@inertiajs/vue3';
                     <div class="p-6 text-gray-900 dark:text-gray-100" style="">
                         <p style="font-size: 2rem;">Rocket Dice</p>
                         <br>
-                        <p style="font-size: 1rem;">1. Wählen Sie einen Einsatz. <br>
-                            2. Wählen Sie eine Zahl und bestimme, ob die gewürfelte Zahl kleiner oder grösser sein wird. <br>
+                        <p style="font-size: 1rem;">1. Wählen Sie einen Einsatz <br>
+                            2. Wählen Sie eine Zahl und bestimme, ob die gewürfelte Zahl kleiner oder grösser sein wird <br>
                             3. Drücken Sie auf "Spielen"
                         </p>
                     </div>
