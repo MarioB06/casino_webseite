@@ -50,6 +50,9 @@ Route::get('/findTheCup', function () {
     return Inertia::render('FindTheCup');
 })->middleware(['auth', 'verified'])->name('findTheCup');
 
+Route::get('/animations_Dice', function () {
+    return Inertia::render('animations_Dice');
+})->middleware(['auth', 'verified'])->name('animations_Dice');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
