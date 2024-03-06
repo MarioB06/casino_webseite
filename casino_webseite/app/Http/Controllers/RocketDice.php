@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use GuzzleHttp\Psr7\Response;
 use Illuminate\Http\Request;
 
 class RocketDice extends Controller
 {
-    public function play(Request $request)
+    public function play(Request $request): Response
     {
-
+        
         $validatedData = $request->validate([
             'number' => 'required|numeric|min:2|max:11',
             'higher_lower' => 'required|in:higher,lower',
@@ -39,7 +40,8 @@ class RocketDice extends Controller
 
                     $profit = $betAmount * $multiplier;
 
-                    return redirect()->route('animation')->with(compact('dice_1', 'dice_2', 'profit'));
+
+                    return redirect()->route('diceAnimationPage', compact('win', 'dice1', 'dice2', 'profit'));
 
 
                 } else {

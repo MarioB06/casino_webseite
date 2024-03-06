@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RocketDiceController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -51,12 +52,17 @@ Route::get('/findTheCup', function () {
 })->middleware(['auth', 'verified'])->name('findTheCup');
 
 
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::post('/rocketDice/play', [RocketDiceController::class, 'play'])->name('rocketDice.play');
 
+    Route::post('/rocketDice/play', [RocketDiceController::class, 'edit'])->name('rocketDice.play');
+    
+    Route::get('/diceAnimationPage', function () {
+        return view('DiceAnimationPage');
+    })->name('diceAnimationPage');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
