@@ -1,18 +1,11 @@
-<script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
-</script>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Rocket Dice') }}
+        </h2>
+    </x-slot>
 
-<template>
-    <Head title="Slot Machine" />
-
-
-    <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Rocket Dice</h2>
-        </template>
-
-        <div class="py-12">
+    <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div style="font-weight: bold; text-align: center;">
                     <div class="p-6 text-gray-900 dark:text-gray-100" style="">
@@ -28,7 +21,7 @@ import { Head, Link } from '@inertiajs/vue3';
                     <form :action="route('rocketdice.play')" method="post">
                         <div style="display: grid; grid-template-columns: 1fr 1fr;">
                             <div class="p-6 text-gray-900 dark:text-gray-100">
-                                Kontostand: {{ $attrs.account }} CHF<br>
+                                Kontostand: {{ $account }} CHF<br>
                                 <label for="bet_amount">Einsatz: </label>
                                 <input type="text" class="form-control" id="einsatz" placeholder="mind. 1 CHF">
                             </div>
@@ -64,5 +57,5 @@ import { Head, Link } from '@inertiajs/vue3';
                 </div>             
             </div>
         </div>
-    </AuthenticatedLayout>
-</template>
+
+</x-app-layout>
