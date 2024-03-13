@@ -1,10 +1,10 @@
 # Casino Webseite Setup-Anleitung
 
-Um die Casino-Webseite lokal auf deinem Rechner einzurichten, folge bitte diesen Schritten:
+Um die Casino-Webseite lokal auf dem Rechner einzurichten, diese Schritten ausführen:
 
 ## Projekt klonen
 
-Zuerst musst du das Projekt von Git klonen </br>
+Das Projekt von Git klonen </br>
 <https://github.com/MarioB06/casino_webseite>
 
 ## PHP-Terminal
@@ -31,11 +31,10 @@ npm run build
 ```
 
 ## XAMPP starten
-Starte XAMPP und starte Apache und MySQL.
+XAMPP starten und Apache und MySQL.
 
 ## Datenbank konfigurieren
-Öffne die `.env-Datei` im Laravel-Projekt und ändere die Zeile:
-
+Die `.env-Datei` Datei öffnen und fogende Zeile ämderm:
 
 <code>DB_DATABASE=casino_webseite</code>
 
@@ -44,23 +43,23 @@ zu:
 <code>DB_DATABASE=test</code>
 
 ## Datenbank migrieren
-Führe den folgenden Befehl im Terminal (PHP) aus, um die Datenbankmigration durchzuführen:
+Folgeneden Befehl im PHP Terminal ausführen:
 
 ```bash
 php artisan migrate
 ```
 
 ## PHP-Server starten
-Starte den PHP-Server mit dem folgenden Befehl:
+PHP-Server starten:
 
 ```bash
 php artisan serve
 ```
 
-Öffne die Webseite mit dem Link, den `php artisan serve` bereitstellt.
+Webseite mit dem Link öffnen, den `php artisan serve` bereitstellt.
 
 ## Vue-Entwicklungsserver starten
-Öffne ein weiteres Terminal und führe den Befehl aus:
+Ein weiteres Terminal öffnen:
 ```bash
 npm run dev
 ```

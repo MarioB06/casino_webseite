@@ -1,6 +1,6 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 </script>
 
 <template>
@@ -25,8 +25,8 @@ import { Head } from '@inertiajs/vue3';
                     </div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
-                    <form action="/submit" method="post"> 
-                        <div style="display: grid; grid-template-columns: 4fr 4fr 1fr;">
+                    <form :action="route('rocketdice.play')" method="post">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr;">
                             <div class="p-6 text-gray-900 dark:text-gray-100">
                                 Kontostand: {{ $attrs.account }} CHF<br>
                                 <label for="bet_amount">Einsatz: </label>
