@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Application;
 use Inertia\Inertia;
+use App\Http\Controllers\RocketDiceController;
 
 Route::get('/', function () {
     return view('welcome');

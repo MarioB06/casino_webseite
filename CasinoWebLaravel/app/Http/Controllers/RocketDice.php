@@ -9,6 +9,7 @@ class RocketDice extends Controller
 {
     public function play(Request $request)
     {
+        dd("dsjfbsdjh");
 
         $validatedData = $request->validate([
             'number' => 'required|numeric|min:2|max:11',
