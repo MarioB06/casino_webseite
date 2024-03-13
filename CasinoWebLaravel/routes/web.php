@@ -37,6 +37,10 @@ Route::middleware('auth')->group(function () {
         return view('findTheCup');
     });
 
+
+    Route::get('/testt', function () {
+        return view('animation.rocketDicePlay');
+    });
     Route::post('/rocketDice/play', [RocketDiceController::class, 'play'])->name('rocketDice.play');
 
 
