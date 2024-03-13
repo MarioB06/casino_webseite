@@ -26,15 +26,18 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/slotMachine', function () {
-        return view('slotMachine');
+        $account = Auth::user()->account;
+        return view('slotMachine')->with('account', $account);
     });
 
     Route::get('/rocketDice', function () {
-        return view('rocketDice');
+        $account = Auth::user()->account;
+        return view('rocketDice')->with('account', $account);
     });
 
     Route::get('/findTheCup', function () {
-        return view('findTheCup');
+        $account = Auth::user()->account;
+        return view('findTheCup')->with('account', $account);
     });
 
     Route::post('/rocketDice/play', [RocketDiceController::class, 'play'])->name('rocketDice.play');
