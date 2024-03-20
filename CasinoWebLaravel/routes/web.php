@@ -40,6 +40,11 @@ Route::middleware('auth')->group(function () {
         return view('findTheCup')->with('account', $account);
     });
 
+    Route::get('/ad', function () {
+        $account = Auth::user()->account;
+        return view('ad')->with('account', $account);
+    });
+
     Route::post('/rocketDice/play', [RocketDiceController::class, 'play'])->name('rocketDice.play');
 
 
