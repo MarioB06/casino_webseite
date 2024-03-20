@@ -37,12 +37,51 @@
                         <div class="p-6 text-gray-900 dark:text-gray-100">Rocket Dice (Animations)</div>
                     </div>
                     <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
-                        <div class="animation-container p-6 text-gray-900 dark:text-gray-100">
-                            @foreach ($extendedImages as $index => $image)
-                                <img class="image" src="{{ $images[$index % count($images)] }}" alt="Image {{ $index + 1 }}" style="animation-delay: {{ $index * 0.2 }}s;">
-                            @endforeach
-                        </div>
+                    <div class="animation-container p-6 text-gray-900 dark:text-gray-100">
+        @foreach ($extendedImages as $index => $image)
+            @if ($index + 1 == $dice_1 || $index + 1 == $dice_2)
+                <img class="image" src="{{ $images[$index % count($images)] }}" alt="Image {{ $index + 1 }}" style="animation-delay: {{ $index * 0.2 }}s;">
+            @else
+                <img class="image" src="{{ $images[$index % count($images)] }}" alt="Image {{ $index + 1 }}" style="animation-delay: {{ $index * 0.2 }}s; opacity: 0;">
+            @endif
+        @endforeach
+    </div>
+    <div class="animation-container p-6 text-gray-900 dark:text-gray-100">
+    @foreach ($extendedImages as $index => $image)
+        @if ($index + 1 == $dice_1 || $index + 1 == $dice_2)
+            <img class="image" src="{{ $images[$index % count($images)] }}" alt="Image {{ $index + 1 }}" style="animation-delay: {{ $index * 0.2 }}s;">
+        @else
+            <img class="image" src="{{ $images[$index % count($images)] }}" alt="Image {{ $index + 1 }}" style="animation-delay: {{ $index * 0.2 }}s; opacity: 0;">
+        @endif
+    @endforeach
+</div>
+
                     </div>
+
+                    <br>
+
+                    <div class="py-12">
+                      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                          <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
+                              <div class="p-6 text-gray-900 dark:text-gray-100">
+                                  <!-- Anzeige von dice_1, dice_2 und profit -->
+                                  <p>Erster Würfel: {{ $dice_1 }}</p>
+                                  <p>Zweiter Würfel: {{ $dice_2 }}</p>
+                                  <p>Profit: {{ $profit }}</p>
+
+                                  <!-- Hier können Sie Ihre Animationsbilder und den entsprechenden Code einfügen -->
+
+                                  @if ($dice_1)
+                    <img src="{{ asset('img/dice_img/Dice (' . $dice_1 . ').png') }}" alt="Dice {{ $dice_1 }}" style="width: 50px; height: 50px;">
+                @endif
+                @if ($dice_2)
+                    <img src="{{ asset('img/dice_img/Dice (' . $dice_2 . ').png') }}" alt="Dice {{ $dice_2 }}" style="width: 50px; height: 50px;">
+                @endif
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
                 </div>
             </div>
         </AuthenticatedLayout>
@@ -94,4 +133,27 @@
             }
         }
     </style>
+<script>
+    window.onload = function() {
+        var diceImages = document.querySelectorAll('.animation-container img');
+        setTimeout(function() {
+            diceImages.forEach(function(image) {
+                image.style.animation = 'none';
+                image.style.opacity = 1; // Stellen Sie sicher, dass das letzte Bild sichtbar ist
+            });
+            
+            // Bilder von $dice_1 und $dice_2 anzeigen
+            var diceImage1 = document.querySelector('.animation-container img:nth-child({{ $dice_1 }})');
+            var diceImage2 = document.querySelector('.animation-container img:nth-child({{ $dice_2 }})');
+            diceImage1.style.opacity = 1;
+            diceImage2.style.opacity = 1;
+        }, 5000); // 5000 Millisekunden entsprechen 5 Sekunden
+    };
+</script>
+
+
+
+
+
+
 </x-app-layout>

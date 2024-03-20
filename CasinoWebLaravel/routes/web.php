@@ -15,10 +15,23 @@ Route::get('/team', function () {
     return view('team');
 });
 
+
 Route::get('/dashboard', function () {
     $account = Auth::user()->account;
     return view('dashboard')->with('account', $account);
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+Route::get('/testt', function (Illuminate\Http\Request $request) {
+    $dice_1 = $request->session()->get('dice_1');
+    $dice_2 = $request->session()->get('dice_2');
+    $profit = $request->session()->get('profit');
+    
+    return view('animation.rocketDicePlay', compact('dice_1', 'dice_2', 'profit'));
+})->middleware(['auth', 'verified'])->name('testt');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -49,10 +62,8 @@ Route::middleware('auth')->group(function () {
     });
 
 
-    Route::get('/testt', function () {
-        return view('animation.rocketDicePlay');
-    });
-    Route::post('/rocketDice/play', [RocketDiceController::class, 'play'])->name('rocketDice.play');
+
+    Route::post('/rocketDice/play', [RocketDice::class, 'play'])->name('rocketDice.play');
 
 
 });
