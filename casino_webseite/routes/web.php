@@ -55,6 +55,9 @@ Route::get('/animationsTest', function () {
 })->middleware(['auth', 'verified'])->name('animationsTest');
 
 
+Route::get('/animations_Dice', function () {
+    return Inertia::render('animations_Dice');
+})->middleware(['auth', 'verified'])->name('animations_Dice');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

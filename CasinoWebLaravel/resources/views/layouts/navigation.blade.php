@@ -24,6 +24,9 @@
                     <x-nav-link :href="url('findTheCup')" :active="request()->routeIs('findTheCup')">
                         {{ __('Find the Cup') }}
                     </x-nav-link>
+                    <x-nav-link :href="url('ad')" :active="request()->routeIs('ad')">
+                        {{ __('Watch Ad') }}
+                    </x-nav-link>
                 </div>
             </div>
 

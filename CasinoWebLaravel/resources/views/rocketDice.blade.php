@@ -27,7 +27,7 @@
                                 <input type="text" class="form-control" id="einsatz" name="bet_amount" placeholder="mind. 1 CHF">
 
                             </div>
-                            <div class="p-6 text-gray-900 dark:text-gray-100">
+                            <div class="p-6 text-gray-900 dark:text-gray-100" style="margin: auto;">
                                 <div>
                                     <label for="number" style="margin: 1rem;">Zahl:</label>
                                     <select id="number" name="number" required>
@@ -51,11 +51,11 @@
                                     <label for="number_higher" style="margin: 0.5rem;">größer</label>
                                 </div>
                             </div>
-                            <div style="margin: 1.5rem;">
+                            <div style="margin: 1.5rem; text-align: right;">
                                 <button class="p-6 text-gray-900 dark:text-gray-100 motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="background-color: aquamarine; border-radius: 0.5rem;"><input type="submit" value="Spielen"></button>
                             </div>    
                         </div>
-                    </form>
+                    </form>     
                 </div>             
             </div>
         </div>

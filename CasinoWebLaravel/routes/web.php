@@ -42,6 +42,13 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::post('/rocketDice/play', [RocketDice::class, 'play'])->name('rocketDice.play');
+    
+    Route::get('/ad', function () {
+        $account = Auth::user()->account;
+        return view('ad')->with('account', $account);
+    });
+
+    Route::post('/rocketDice/play', [RocketDiceController::class, 'play'])->name('rocketDice.play');
 
 
 });
