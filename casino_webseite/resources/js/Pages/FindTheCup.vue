@@ -38,15 +38,8 @@ import { Head } from '@inertiajs/vue3';
                                 <button class="p-6 text-gray-900 dark:text-gray-100 motion-safe:hover:scale-[1.05] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500" style="background-color: aquamarine; border-radius: 0.5rem;"><input type="submit" value="Spielen"></button>
                             </div>    
                         </div>
-                        
-                        
                     </form>
-                </div> 
-                <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
-                        -Game-
-                    </div>
-                </div>             
+                </div>          
             </div>
         </div>
     </AuthenticatedLayout>

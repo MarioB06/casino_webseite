@@ -1,18 +1,11 @@
-<script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link } from '@inertiajs/vue3';
-</script>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Rocket Dice') }}
+        </h2>
+    </x-slot>
 
-<template>
-    <Head title="Slot Machine" />
-
-
-    <AuthenticatedLayout>
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Rocket Dice</h2>
-        </template>
-
-        <div class="py-12">
+    <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div style="font-weight: bold; text-align: center;">
                     <div class="p-6 text-gray-900 dark:text-gray-100" style="">
@@ -25,11 +18,10 @@ import { Head, Link } from '@inertiajs/vue3';
                     </div>
                 </div>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
-                    <form :action="route('rocketDice.play')" method="post">
-                        @csrf
+                    <form action="{{ route('rocketDice.play') }}" method="POST">
                         <div style="display: grid; grid-template-columns: 1fr 1fr;">
                             <div class="p-6 text-gray-900 dark:text-gray-100">
-                                Kontostand: {{ $attrs.account }} CHF<br>
+                                Kontostand: {{ $account }} CHF<br>
                                 <label for="bet_amount">Einsatz: </label>
                                 <input type="text" class="form-control" id="einsatz" placeholder="mind. 1 CHF">
                             </div>
@@ -50,10 +42,10 @@ import { Head, Link } from '@inertiajs/vue3';
                                     </select>
                                 </div>
                                 <div>
-                                    <input type="radio" id="number_lower" name="option" value="lower" required>
+                                    <input type="radio" id="number_lower" name="option" value="number_lower" required>
                                     <label for="number_lower" style="margin: 0.5rem;">kleiner</label>              
                                                     
-                                    <input type="radio" id="number_higher" name="option" value="higher" required>
+                                    <input type="radio" id="number_higher" name="option" value="number_higher" required>
                                     <label for="number_higher" style="margin: 0.5rem;">größer</label>
                                 </div>
                             </div>
@@ -65,5 +57,5 @@ import { Head, Link } from '@inertiajs/vue3';
                 </div>             
             </div>
         </div>
-    </AuthenticatedLayout>
-</template>
+
+</x-app-layout>
