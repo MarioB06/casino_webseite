@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Application;
 use Inertia\Inertia;
-use App\Http\Controllers\RocketDiceController;
+use App\Http\Controllers\RocketDice;
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
         return view('findTheCup')->with('account', $account);
     });
 
-    Route::post('/rocketDice/play', [RocketDiceController::class, 'play'])->name('rocketDice.play');
+    Route::post('/rocketDice/play', [RocketDice::class, 'play'])->name('rocketDice.play');
 
 
 });

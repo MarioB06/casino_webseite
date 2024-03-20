@@ -9,13 +9,13 @@ class RocketDice extends Controller
 {
     public function play(Request $request)
     {
-        dd("dsjfbsdjh");
-
+        
         $validatedData = $request->validate([
-            'number' => 'required|numeric|min:2|max:11',
-            'higher_lower' => 'required|in:higher,lower',
-            'bet_amount' => 'required|numeric|min:1.00',
+            'number' => 'required|numeric',
+            'higher_lower' => 'required',
+            'bet_amount' => 'required|numeric',
         ]);
+        
 
         $currentUser = Auth::user();
         $currentBalance = $currentUser->account;
@@ -38,12 +38,21 @@ class RocketDice extends Controller
 
                     $multiplier = $this->calculate_multiplikator_for_higher($number);
 
-                    $profit = $betAmount * $multiplier;
+                    $profit = ($betAmount * $multiplier) - $betAmount;
+
+                    $currentUser->account += $profit;
+
+                    $currentUser->save();
 
                     return redirect()->route('animation')->with(compact('dice_1', 'dice_2', 'profit'));
 
 
                 } else {
+
+                    $currentUser->account -= $betAmount;
+
+                    $currentUser->save();
+
                     return redirect()->back()->with('error', 'Verloren.');
 
                 }
@@ -62,11 +71,20 @@ class RocketDice extends Controller
 
                     $multiplier = $this->calculate_multiplikator_for_lower($number);
 
-                    $profit = $betAmount * $multiplier;
+                    $profit = ($betAmount * $multiplier) - $betAmount;
+
+                    $currentUser->account += $profit;
+
+                    $currentUser->save();
 
                     return redirect()->route('animation')->with(compact('dice_1', 'dice_2', 'profit'));
 
                 } else {
+
+                    $currentUser->account -= $betAmount;
+
+                    $currentUser->save();
+
                     return redirect()->back()->with('error', 'Verloren.');
 
                 }
@@ -86,9 +104,9 @@ class RocketDice extends Controller
     private function calculate_multiplikator_for_higher($number)
     {
         $multipliers = [
-            2 => 1.02,
-            3 => 1.07,
-            4 => 1.18,
+            2 => 1.01,
+            3 => 1.04,
+            4 => 1.16,
             5 => 1.36,
             6 => 1.68,
             7 => 2.35,

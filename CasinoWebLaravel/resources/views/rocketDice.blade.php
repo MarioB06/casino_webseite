@@ -19,11 +19,13 @@
                 </div>
                 <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" style="margin-top: 1rem;">
                     <form action="{{ route('rocketDice.play') }}" method="POST">
+                        @csrf
                         <div style="display: grid; grid-template-columns: 1fr 1fr;">
                             <div class="p-6 text-gray-900 dark:text-gray-100">
                                 Kontostand: {{ $account }} CHF<br>
                                 <label for="bet_amount">Einsatz: </label>
-                                <input type="text" class="form-control" id="einsatz" placeholder="mind. 1 CHF">
+                                <input type="text" class="form-control" id="einsatz" name="bet_amount" placeholder="mind. 1 CHF">
+
                             </div>
                             <div class="p-6 text-gray-900 dark:text-gray-100">
                                 <div>
@@ -42,10 +44,10 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <input type="radio" id="number_lower" name="option" value="number_lower" required>
+                                    <input type="radio" id="number_lower" name="higher_lower" value="lower" required>
                                     <label for="number_lower" style="margin: 0.5rem;">kleiner</label>              
                                                     
-                                    <input type="radio" id="number_higher" name="option" value="number_higher" required>
+                                    <input type="radio" id="number_higher" name="higher_lower" value="higher" required>
                                     <label for="number_higher" style="margin: 0.5rem;">größer</label>
                                 </div>
                             </div>
